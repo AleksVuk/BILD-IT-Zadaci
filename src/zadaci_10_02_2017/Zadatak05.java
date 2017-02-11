@@ -1,5 +1,7 @@
 package zadaci_10_02_2017;
 
+import java.util.InputMismatchException;
+
 public class Zadatak05 {
 	
 	public static double[][] sortRows(double [][] matrix){
@@ -26,27 +28,31 @@ public class Zadatak05 {
 		// TODO Auto-generated method stub
 		java.util.Scanner input = new java.util.Scanner (System.in);
 		
-		System.out.print("Unesite velicinu matrice: ");
-		int n = input.nextInt();										//definisanje velicine matrice
+		try{
+			System.out.print("Unesite velicinu matrice: ");
+			int n = input.nextInt();										//definisanje velicine matrice
 		
-		double [][] matrix = new double [n][n];
-		System.out.println("Unesite elemente "+n+"x"+n+" matrice: ");	//inicijalizacija elemenata matrice
-		for (int i=0; i<n; i++){
-			for (int j=0; j<n; j++){
-				matrix[i][j] = input.nextDouble();
+			double [][] matrix = new double [n][n];
+			System.out.println("Unesite elemente "+n+"x"+n+" matrice: ");	//inicijalizacija elemenata matrice
+			for (int i=0; i<n; i++){
+				for (int j=0; j<n; j++){
+					matrix[i][j] = input.nextDouble();
+				}
 			}
-		}
 		
-		double [][] sortedMatrix = sortRows(matrix);					//poziv metode za sortiranje redova matrice
+			double [][] sortedMatrix = sortRows(matrix);					//poziv metode za sortiranje redova matrice
 		
-		System.out.println("Matrica sa sortiranim redovima: ");			//ispis sortirane matrice
-		for (int i=0; i<n; i++){
-			for (int j=0; j<n; j++){
+			System.out.println("Matrica sa sortiranim redovima: ");			//ispis sortirane matrice
+			for (int i=0; i<n; i++){
+				for (int j=0; j<n; j++){
 				System.out.print(sortedMatrix[i][j]+" ");
+				}
+				System.out.println();
 			}
-			System.out.println();
+			
+		}catch (InputMismatchException ex){									
+			System.out.println("Pogresan unos!");
 		}
-		
 		
 		input.close();
 	}

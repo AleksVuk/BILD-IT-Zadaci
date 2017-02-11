@@ -1,5 +1,7 @@
 package zadaci_10_02_2017;
 
+import java.util.InputMismatchException;
+
 public class Zadatak01 {
 	
 	public static void printPrimes(int n1, int n2, int n3){
@@ -29,14 +31,21 @@ public class Zadatak01 {
 		// TODO Auto-generated method stub
 		
 		java.util.Scanner input = new java.util.Scanner (System.in);
-		System.out.print("Unesite pocetni broj: ");										//preko skenera kupimo unos
-		int n1 = input.nextInt();                                                       //od korisnika za pocetni broj "n1",
-		System.out.print("Unesite krajnji broj: ");										//krajnji broj "n2" i za zeljeni broj
-		int n2 = input.nextInt();														//ispisanih brojeva po liniji "n3".
-		System.out.print("Koliko prostih brojeva zelite da bude ispisano po liniji? ");
-		int n3 = input.nextInt();
+		try{
+			System.out.print("Unesite pocetni broj: ");										//preko skenera kupimo unos
+			int n1 = input.nextInt();                                                       //od korisnika za pocetni broj "n1",
 		
-		printPrimes(n1, n2, n3);   //pozivanje metode za ispis prostih brojeva
+			System.out.print("Unesite krajnji broj: ");										//krajnji broj "n2" i za zeljeni broj
+			int n2 = input.nextInt();														//ispisanih brojeva po liniji "n3".
+		
+			System.out.print("Koliko prostih brojeva zelite da bude ispisano po liniji? ");
+			int n3 = input.nextInt();
+		
+			printPrimes(n1, n2, n3);   //pozivanje metode za ispis prostih brojeva
+			
+		}catch (InputMismatchException ex){
+			System.out.println("Pogresan unos, unesite cijele brojeve!");
+		}
 		
 		input.close();
 		

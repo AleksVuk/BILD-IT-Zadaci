@@ -1,5 +1,7 @@
 package zadaci_10_02_2017;
 
+import java.util.InputMismatchException;
+
 public class Zadatak03 {
 
 	public static boolean equals(int [] array1, int [] array2){		//metoda koja ispituje da li su dva niza jednaka
@@ -27,19 +29,23 @@ public class Zadatak03 {
 		int [] array1 = new int[10];
 		System.out.println("Unesite deset cjelobrojnih vrijednosti za prvi niz: ");
 		
-		for (int i=0;i<10;i++){										//petljom prolazimo kroz niz i preko skenera pokupimo 
-			array1[i]=input.nextInt();								//unos za svih deset elemenata prvog niza
+		try{
+			for (int i=0;i<10;i++){										//petljom prolazimo kroz niz i preko skenera pokupimo 
+				array1[i]=input.nextInt();								//unos za svih deset elemenata prvog niza
+			}
+		
+			int [] array2 = new int[10];
+			System.out.println("Unesite deset cjelobrojnih vrijednosti za drugi niz: ");
+		
+			for (int i=0;i<10;i++){										//petljom prolazimo kroz niz i preko skenera pokupimo 
+				array2[i]=input.nextInt();							 	//unos za svih deset elemenata drugog niza
+			}
+		
+			System.out.println("Dva unijeta niza su jednaka? "+equals(array1,array2)); //poziv metode i stampanje rezulatata 
+																				   	   //koji ta metoda vraca
+		}catch (InputMismatchException ex){
+			System.out.println("Pogresan unos, unesite cijele brojeve!");
 		}
-		
-		int [] array2 = new int[10];
-		System.out.println("Unesite deset cjelobrojnih vrijednosti za drugi niz: ");
-		
-		for (int i=0;i<10;i++){										//petljom prolazimo kroz niz i preko skenera pokupimo 
-			array2[i]=input.nextInt();							 	//unos za svih deset elemenata drugog niza
-		}
-		
-		System.out.println("Dva unijeta niza su jednaka? "+equals(array1,array2)); //poziv metode i stampanje rezulatata 
-																				   //koji ta metoda vraca
 		input.close();
 	}
 

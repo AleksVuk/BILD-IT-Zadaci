@@ -16,7 +16,7 @@ public class Zadatak03 {
 		//brojac prostih brojeva, koristimo ga za kontrolu ispisa po linijama (10 brojeva po liniji)
 		int count = 0;
 		System.out.println("Svi prosti brojevi u rasponu od 0 do 100000: ");
-		for (int i = 3; i <=100000; i++){			
+		for (int i = 2; i <=100000; i++){			
 			if (isPrime(i) == 1){
 				count++;
 				if (count % 10 == 0){

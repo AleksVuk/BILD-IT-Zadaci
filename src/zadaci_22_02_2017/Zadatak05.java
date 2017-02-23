@@ -13,10 +13,14 @@ public class Zadatak05 {
 		//petlja koja kontrolise pravilan unos broja
 		while (works1) {
 			try {
-				System.out.print("Unesite cijeli broj tipa int: ");
+				System.out.print("Unesite cijeli broj u rasponu od 1 do 50: ");
 				number = input.nextInt();
 				if (number <= 0) {
-					System.out.println("Unesite broj veci od nule!");
+					System.out.println("Unesite broj veci od 0 a manji od 50.!");
+					continue;
+				}
+				if (number > 50){
+					System.out.println("Unesite cijeli broj manji od 50 a veci od 0.");
 					continue;
 				}
 				works1 = false;

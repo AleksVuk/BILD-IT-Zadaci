@@ -38,20 +38,15 @@ public class Zadatak05 {
 	
 	//method which initializes list with the unique numbers
 	public static void initializeUniqueNumbers (ArrayList<Integer> allNumbers, ArrayList<Integer> uniqueNumbers){
-		//counter of number repetitions
-		int count = 0;
 		uniqueNumbers.add(allNumbers.get(0));
 			
 		for (int i = 0; i < allNumbers.size(); i++){
-			for (int j = 0; j < uniqueNumbers.size(); j++){
-				if (allNumbers.get(i) == uniqueNumbers.get(j)){		
-					count++;
-				}
+			if (uniqueNumbers.contains(allNumbers.get(i))){	
+				continue;
 			}
-			if (count == 0){
+			else{					
 				uniqueNumbers.add(allNumbers.get(i));
 			}
-			count = 0;
 		}
 			
 	}

@@ -8,13 +8,13 @@ public class DisplayingPrimeNumbers {
 		//creating new stack of integers object
 		StackOfIntegers stack = new StackOfIntegers();
 		
-		for (int i = 120; i >= 2; i--){
+		for (int i = 2; i <= 120; i++){
 			if (MyInteger.isPrime(i)){	//invoking method isPrime(int) from MyInteger class
 				stack.push(i);
 			}
 		}
 		
-		System.out.println("All prime numbers from 0 to 120: ");
+		System.out.println("All prime numbers from 0 to 120 in decreasing order are: ");
 		while (!stack.empty()){
 			System.out.print(stack.pop() + " "); 
 		}
